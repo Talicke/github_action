@@ -1,18 +1,11 @@
 name: Exemple de Workflow CI
 
-#trigger
 on: [push]
 
-
 jobs:
-  #premier jobs nomé build
   build:
-  #Runners
-  runs-on: ubuntu-lastest
-  #etape a "éxécuter"
-  steps:
-  #clone le dépots
-  - uses: actions/checkou@v2
-  - name: Exécution d'un script simple
-    #execute un script 
-    run: echo "Le workflow CI est déclenché pas un push sur GitHub!"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Exécution d'un script simple
+      run: echo "Le workflow CI est déclenché par un push sur GitHub!"
